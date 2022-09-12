@@ -1,0 +1,26 @@
+{
+  "app_title": {
+    "message": "WhatsApp Secure"
+  },
+  "app_description": {
+    "message": "Secure for WhatsApp Web."
+  },
+  "option_screenlock" : {
+    "message" : "Screen Lock Enable."
+  },
+  "option_screenlock_inActivityStatus" : {
+    "message" : "Inactivity Detection"
+  },
+  "option_screenlock_inActivityMinute" : {
+    "message" : "Interval(minute)"
+  },
+  "option_screenlock_windowBlur" : {
+    "message" : "Window or Tab Changes"
+  },
+  "option_screenlock_keyPress" : {
+    "message" : "Key Press (F2)"
+  },
+  "option_screenlock_start" : {
+    "message" : "On Refresh"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 3,
+  "name": "__MSG_app_title__",
+  "description": "__MSG_app_description__",
+  "short_name": "__MSG_app_title__",
+  "default_locale": "en",
+  "version": "0.1",
+  "background": {
+    "service_worker": "app/background/background.js",
+    "type": "module" //optional
+  },
+  "icons": {
+    "16": "app/public/logo.png",
+    "48": "app/public/logo.png",
+    "128": "app/public/logo.png"
+  },
+  "permissions": [
+
+  ],
+  "host_permissions": [
+    "*://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_icon": "app/public/logo.png",
+    "default_popup": "app/public/index.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "app/background/contentScripts/*.js",
+        "app/public/js/jquery-3.5.1.min.js",
+        "app/public/js/sweet.js",
+        "app/public/img/*.gif",
+        "app/public/img/*.png"
+      ],
+      "matches": [ "<all_urls>" ]
+    }
+  ],
+  "externally_connectable": {
+    "matches": [
+      "*://web.whatsapp.com/*"
+    ]
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "*://web.whatsapp.com/*"
+      ],
+      "css": [
+        "app/background/contentStyles/content.css"
+      ]
+    },
+    {
+      "run_at": "document_end",
+      "matches": [
+        "*://web.whatsapp.com/*"
+      ],
+      "js": [
+        //"app/public/js/jquery-3.5.1.min.js",
+        "app/background/contentScripts/content.js"
+
+      ]
+    }
+  ]
+}
