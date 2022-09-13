@@ -1,100 +1,89 @@
 /*
+    Recent Box
+*/
+/* #pane-side>div:first-of-type>div>div>div {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+*/
+
+#pane-side>div:first-of-type>div>div>div:hover * {
+    filter: unset !important;
+    -webkit-filter: unset !important;
+}
+
+/*
     Recent Header
 */
-#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:first-of-type > div:first-of-type > span {
+#pane-side>div:first-of-type>div>div>div>div>div>div:nth-of-type(2)>div:first-of-type>div:first-of-type>span {
     filter: blur(3.6px);
     -webkit-filter: blur(3.6px);
 }
 
-    #pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:first-of-type > div:first-of-type > span:hover {
-        filter: unset;
-        -webkit-filter: unset;
-    }
-
 /*
     Recent Avatar
 */
-#pane-side > div:first-of-type > div > div > div > div > div > div:first-of-type > div > div {
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
+#pane-side>div:first-of-type>div>div>div>div>div>div:first-of-type>div>div {
+    filter: blur(3.6px);
+    -webkit-filter: blur(3.6px);
 }
-
-    #pane-side > div:first-of-type > div > div > div > div > div > div:first-of-type > div > div:hover {
-        filter: unset;
-        -webkit-filter: unset;
-    }
 
 /*
     Recent > Last Message Time
 */
-#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(2) {
-    filter: blur(2.6px);
-    -webkit-filter: blur(2.6px);
+#pane-side>div:first-of-type>div>div>div>div>div>div:nth-of-type(2)>div:first-of-type>div:nth-of-type(2) {
+    filter: blur(3.6px);
+    -webkit-filter: blur(3.6px);
 }
 
-    #pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(2):hover {
-        filter: unset;
-        -webkit-filter: unset;
-    }
 
 /*
     Recent Last Message Sender
 */
-#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > span:first-of-type {
-    filter: blur(3.0px);
-    -webkit-filter: blur(3.0px);
+#pane-side>div:first-of-type>div>div>div>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:first-of-type>span>span:first-of-type {
+    filter: blur(3.6px);
+    -webkit-filter: blur(3.6px);
 }
 
-    #pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > span:first-of-type:hover {
-        filter: unset;
-        -webkit-filter: unset;
-    }
 
 /*
     Recent Last Message Content
 */
-#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > span:nth-of-type(3) {
-    filter: blur(3.0px);
-    -webkit-filter: blur(3.0px);
+#pane-side>div:first-of-type>div>div>div>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:first-of-type>span>span:nth-of-type(3) {
+    filter: blur(3.6px);
+    -webkit-filter: blur(3.6px);
 }
 
-    #pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > span:nth-of-type(3):hover {
-        filter: unset;
-        -webkit-filter: unset;
-    }
 
 /*
     Recent Last Message Status
 */
-#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > div:first-of-type {
-    filter: blur(2.6px);
-    -webkit-filter: blur(2.6px);
+#pane-side>div:first-of-type>div>div>div>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:first-of-type>span>div:first-of-type {
+    filter: blur(3.6px);
+    -webkit-filter: blur(3.6px);
 }
 
-    #pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > div:first-of-type:hover {
-        filter: unset;
-        -webkit-filter: unset;
-    }
 
 /*
     Chat Box > Message Box
 */
-#main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div {
-    filter: blur(3.0px);
-    -webkit-filter: blur(3.0px);
+#main>div:nth-of-type(3)>div>div:nth-of-type(2)>div:nth-of-type(3)>div>div {
+    filter: blur(5.0px);
+    -webkit-filter: blur(5.0px);
 }
 
-    #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div:hover {
-        filter: unset;
-        -webkit-filter: unset;
-    }
-
-#main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div img {
-    filter: blur(15.0px);
-    -webkit-filter: blur(15.0px);
+#main>div:nth-of-type(3)>div>div:nth-of-type(2)>div:nth-of-type(3)>div>div:hover {
+    filter: unset !important;
+    -webkit-filter: unset !important;
 }
 
-    #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div img:hover {
-        filter: unset;
-        -webkit-filter: unset;
-    }
+#main>header>div:first-of-type,
+#main>header>div:nth-of-type(2){
+    filter: blur(5.0px);
+    -webkit-filter: blur(5.0px);
+}
+
+#main>header:hover *{
+    filter: unset !important;
+    -webkit-filter: unset !important;
+}

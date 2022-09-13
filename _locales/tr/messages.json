@@ -1,26 +1,8 @@
 {
   "app_title": {
-    "message": "WhatsApp Ekran Kilidi"
+    "message": "WhatsApp Gizlilik Filtresi"
   },
   "app_description": {
-    "message": "WhatsApp için ekran kilidi."
-  },
-  "option_screenlock" : {
-    "message" : "Ekran Kilidini Aktif Et."
-  },
-  "option_screenlock_inActivityStatus" : {
-    "message" : "Hareketsizlik"
-  },
-  "option_screenlock_inActivityMinute" : {
-    "message" : "Aralık(dak.)"
-  },
-  "option_screenlock_windowBlur" : {
-    "message" : "Pencere veya Sekme Değiştiğinde"
-  },
-  "option_screenlock_keyPress" : {
-    "message" : "Tuşa Basıldığında (F2)"
-  },
-  "option_screenlock_start" : {
-    "message" : "Sayfa Yenilendiğinde"
+    "message": "WhatsApp Web için Gizlilik Filtresi"
   }
 }
