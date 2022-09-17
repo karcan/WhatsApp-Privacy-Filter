@@ -7,7 +7,7 @@
 }
 */
 
-#pane-side>div:first-of-type>div>div>div:hover * {
+#pane-side > div:first-of-type > div > div > div:hover * {
     filter: unset !important;
     -webkit-filter: unset !important;
 }
@@ -15,7 +15,7 @@
 /*
     Recent Header
 */
-#pane-side>div:first-of-type>div>div>div>div>div>div:nth-of-type(2)>div:first-of-type>div:first-of-type>span {
+#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:first-of-type > div:first-of-type > span {
     filter: blur(3.6px);
     -webkit-filter: blur(3.6px);
 }
@@ -23,7 +23,7 @@
 /*
     Recent Avatar
 */
-#pane-side>div:first-of-type>div>div>div>div>div>div:first-of-type>div>div {
+#pane-side > div:first-of-type > div > div > div > div > div > div:first-of-type > div > div {
     filter: blur(3.6px);
     -webkit-filter: blur(3.6px);
 }
@@ -31,7 +31,7 @@
 /*
     Recent > Last Message Time
 */
-#pane-side>div:first-of-type>div>div>div>div>div>div:nth-of-type(2)>div:first-of-type>div:nth-of-type(2) {
+#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(2) {
     filter: blur(3.6px);
     -webkit-filter: blur(3.6px);
 }
@@ -40,7 +40,7 @@
 /*
     Recent Last Message Sender
 */
-#pane-side>div:first-of-type>div>div>div>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:first-of-type>span>span:first-of-type {
+#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > span:first-of-type {
     filter: blur(3.6px);
     -webkit-filter: blur(3.6px);
 }
@@ -49,7 +49,7 @@
 /*
     Recent Last Message Content
 */
-#pane-side>div:first-of-type>div>div>div>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:first-of-type>span>span:nth-of-type(3) {
+#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > span:nth-of-type(3) {
     filter: blur(3.6px);
     -webkit-filter: blur(3.6px);
 }
@@ -58,7 +58,7 @@
 /*
     Recent Last Message Status
 */
-#pane-side>div:first-of-type>div>div>div>div>div>div:nth-of-type(2)>div:nth-of-type(2)>div:first-of-type>span>div:first-of-type {
+#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > div:first-of-type {
     filter: blur(3.6px);
     -webkit-filter: blur(3.6px);
 }
@@ -67,23 +67,23 @@
 /*
     Chat Box > Message Box
 */
-#main>div:nth-of-type(3)>div>div:nth-of-type(2)>div:nth-of-type(3)>div>div {
+#main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div {
     filter: blur(5.0px);
     -webkit-filter: blur(5.0px);
 }
 
-#main>div:nth-of-type(3)>div>div:nth-of-type(2)>div:nth-of-type(3)>div>div:hover {
-    filter: unset !important;
-    -webkit-filter: unset !important;
-}
+    #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div:hover {
+        filter: unset !important;
+        -webkit-filter: unset !important;
+    }
 
-#main>header>div:first-of-type,
-#main>header>div:nth-of-type(2){
+#main > header > div:first-of-type,
+#main > header > div:nth-of-type(2) {
     filter: blur(5.0px);
     -webkit-filter: blur(5.0px);
 }
 
-#main>header:hover *{
+#main > header:hover * {
     filter: unset !important;
     -webkit-filter: unset !important;
 }

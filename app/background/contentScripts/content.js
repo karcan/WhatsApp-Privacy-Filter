@@ -45,46 +45,6 @@ function inject(scripts) {
     }
 }
 
-// var k = {
-//     cssOptions: {
-//         recentHeader: {
-//             cssClass: "#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:first-of-type > div:first-of-type > span", 
-//             blurPx: "3.6"
-//         },
-//         recentHeaderOver: { 
-//             cssClass: "#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:first-of-type > div:first-of-type > span:hover", 
-//             blurPx: "5" },
-//         recentAvatar: "#pane-side > div:first-of-type > div > div > div > div > div > div:first-of-type > div > div",
-//         recentAvatarOver: "#pane-side > div:first-of-type > div > div > div > div > div > div:first-of-type > div > div:hover",
-
-//     }
-// };
-
-// var file = chrome.runtime.getURL("app/background/contentStyles/content.css");
-// var request = new XMLHttpRequest();
-// request.open('GET', file, true);
-// request.responseType = 'blob';
-// request.onload = function () {
-//     var reader = new FileReader();
-//     reader.readAsText(request.response);
-//     reader.onload = function (e) {
-//         //console.log(e.target.result);
-
-//         var fileContent = e.target.result;
-
-//         for (const [key, value] of Object.entries(k.cssOptions)) {
-//             fileContent = fileContent.replace('#' + key, value);
-//         }
-
-//         inject([
-//             scriptFromSource(fileContent, true),
-//         ]);
-
-//     };
-// };
-// request.send();
-
-
 inject([
     //scriptFromFile("app/public/js/jquery-3.5.1.min.js"),
     scriptFromFile("app/background/contentStyles/content.css", true),
@@ -92,4 +52,28 @@ inject([
 ]);
 
 
+chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+    console.log(msg);
+    if (msg.target === 'contentLibrary') {
+        switch (msg.event) {
+            case "first_inject": {
 
+                //inject([
+                //    scriptFromFile("app/background/contentStyles/content.css", true)
+                //]), injected = true, sendResponse({ response: injected });
+
+                sendResponse({ response: "first_inject" });
+            }
+
+            case "re_inject": {
+                //inject([
+                //    scriptFromFile("app/background/contentStyles/content.css", true)
+                //]), injected = true, sendResponse({ response: injected });
+
+                sendResponse({ response: "re_inject" });
+            }
+            default:
+        }
+
+    }
+});

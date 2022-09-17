@@ -16,7 +16,9 @@
     "128": "app/public/logo.png"
   },
   "permissions": [
-
+    "tabs",
+    "storage",
+    "scripting"
   ],
   "host_permissions": [
     "*://web.whatsapp.com/*"
@@ -29,11 +31,7 @@
     {
       "resources": [
         "app/background/contentScripts/*.js",
-        "app/background/contentStyles/*.css",
-        "app/public/js/jquery-3.5.1.min.js",
-        "app/public/js/sweet.js",
-        "app/public/img/*.gif",
-        "app/public/img/*.png"
+        "app/background/contentStyles/*.css"
       ],
       "matches": [ "<all_urls>" ]
     }
@@ -44,15 +42,15 @@
     ]
   },
   "content_scripts": [
-    //{
-    //  "run_at": "document_end",
-    //  "matches": [
-    //    "*://web.whatsapp.com/*"
-    //  ],
-    //  "css": [
-    //    "app/background/contentStyles/content.css"
-    //  ]
-    //},
+  //  //{
+  //  //  "run_at": "document_end",
+  //  //  "matches": [
+  //  //    "*://web.whatsapp.com/*"
+  //  //  ],
+  //  //  "css": [
+  //  //    "app/background/contentStyles/content.css"
+  //  //  ]
+  //  //},
     {
       "run_at": "document_end",
       "matches": [
