@@ -79,18 +79,29 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.target === 'contentLibrary') {
         switch (msg.event) {
             case "inject_css": {
-                
+
                 injectCss();
                 sendResponse({ response: "CSS Injected" });
             }
                 break;
 
             case "de_inject_css": {
-                
+
                 deInjectCss();
                 sendResponse({ response: "CSS De-Injected" });
             }
                 break;
+
+            case "clear_localStorage": {
+                localStorage.clear();
+                sendResponse({ response: "localStorage Cleared" })
+            }
+                break;
+
+            case "refresh_page": {
+                location.reload();
+                sendResponse({ response: "Page Refreshed" })
+            }
 
             default:
                 sendResponse({ response: "Unknown" });
