@@ -1,5 +1,3 @@
-chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, { greeting: "hello" }, function (response) {
-        console.log(response);
-    });
+chrome.runtime.sendMessage({ target: "background", event: "re_inject_css" }, function (response) {
+    console.log("Response", response);
 });

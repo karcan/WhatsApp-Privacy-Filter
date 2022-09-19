@@ -1,67 +1,31 @@
-import { BackgroundMessage } from '../lib/chrome-message.js';
-
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-
     if (tab.url.match(/(https?:\/\/|http?:\/\/)*(whatsapp)\.(com)/g)) {
-        //console.log("WhatsApp detected..", changeInfo);
         if (changeInfo['status'] === "complete") {
-            var apiPath = "/metadata?webp=true&movieid=" + 1 + "&imageFormat=webp";
-
-            chrome.tabs.sendMessage(tabId, { target: "contentLibrary", event: "first_inject" }, function (msg) {
-                //console.log("msg", msg);
-                //msg = msg || {};
-                //if (!msg.response) {
-                //    chrome.scripting.executeScript(
-                //        {
-                //            target: { tabId: tab.id },
-                //            files: ['app/background/contentScripts/lib.js'],
-                //            // function: () => {}, // files or function, both do not work.
-                //        })
-                //}
+            chrome.tabs.sendMessage(tabId, { target: "contentLibrary", event: "inject_css" }, function (response) {
+                console.log("Response", response);
             });
         }
     }
 });
 
+chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+    console.log("background : ", msg);
+    if (msg.target === 'background') {
+        switch (msg.event) {
+            case "re_inject_css": {
+                chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, function (tabs) {
+                    for (var tab of tabs) {
+                        chrome.tabs.sendMessage(tab.id, { target: "contentLibrary", event: "inject_css" }, function (msg) {
+                            console.log("Response", msg);
+                        });
+                    }
+                })
 
-let bgMessage = new BackgroundMessage({
-    urlMatch: /(https?:\/\/|http?:\/\/)*(whatsapp)\.(com)/g,
-    callback: function (tabId, changeInfo, tab) {
-        console.log(tabId, changeInfo, tab);
+                sendResponse({ response: "CSS re-injected." });
+            }
+            default:
+                sendResponse({ response: "unknown" });
+        }
     }
 });
-
-bgMessage.onUpdatedInit();
-
-//chrome.tabs.sendMessage(tabId, { target: "contentLibrary", event: "first_inject" }, function (msg) {
-//    console.log("msg", msg);
-//    //msg = msg || {};
-//    //if (!msg.response) {
-//    //    chrome.scripting.executeScript(
-//    //        {
-//    //            target: { tabId: tab.id },
-//    //            files: ['app/background/contentScripts/lib.js'],
-//    //            // function: () => {}, // files or function, both do not work.
-//    //        })
-//    //}
-//});
-
-
-//chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, function (tabs) {
-//    console.log("whatsApp detected.")
-//    for (var tab of tabs) {
-//        chrome.tabs.sendMessage(tab.id, { target: "contentLibrary", event: "first_inject" }, function (msg) {
-//            console.log("msg", msg);
-//            msg = msg || {};
-//            if (!msg.response) {
-//                chrome.scripting.executeScript(
-//                    {
-//                        target: { tabId: tab.id },
-//                        files: ['app/background/contentScripts/lib.js'],
-//                        // function: () => {}, // files or function, both do not work.
-//                    })
-//            }
-//        });
-//    }
-//})
