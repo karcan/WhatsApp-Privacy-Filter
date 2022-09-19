@@ -30,19 +30,9 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 });
 
 
-chrome.runtime.onInstalled.addListener(function () {
-    chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, function (tabs) {
-        for (var tab of tabs) {
-            chrome.tabs.sendMessage(tab.id, { target: "contentLibrary", event: "inject_css" }, function (msg) {
-                console.log("Response", msg);
-            });
-        }
-    })
-});
-
-
 const uninstallListener = (details) => {
     if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+        chrome.tabs.create({ url: chrome.runtime.getURL("../app/public/welcome.html") });
         console.log("install");
     }
 
