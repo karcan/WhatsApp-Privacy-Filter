@@ -33,11 +33,19 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 const uninstallListener = (details) => {
     if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
         chrome.tabs.create({ url: chrome.runtime.getURL("../app/public/welcome.html") });
-        console.log("install");
+        chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, function (tabs) {
+            for (var tab of tabs) {
+                chrome.tabs.reload(tab.id);
+            }
+        })
     }
 
     if (details.reason === chrome.runtime.OnInstalledReason.UPDATE) {
-        console.log("update");
+        chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, function (tabs) {
+            for (var tab of tabs) {
+                chrome.tabs.reload(tab.id);
+            }
+        })
     }
 
 };

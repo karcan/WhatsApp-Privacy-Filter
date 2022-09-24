@@ -4,5 +4,11 @@
   },
   "app_description": {
     "message": "Privacy Filter for WhatsApp Web"
+  },
+  "welcome_description": {
+    "message": "Extension configuration will be added with next version"
+  },
+  "popup_description": {
+    "message": "You can active/pasive privacy filter with key combination that 'CTRL + ALT + Q'"
   }
 }

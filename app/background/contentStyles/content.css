@@ -67,12 +67,16 @@
 /*
     Chat Box > Message Box
 */
-#main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div {
+#main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div,
+#main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:first-of-type > div:first-of-type,
+#main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div > div:first-of-type > div:first-of-type {
     filter: blur(5.0px);
     -webkit-filter: blur(5.0px);
 }
 
-    #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div:hover {
+    #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div:hover,
+    #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:first-of-type > div:first-of-type:hover,
+    #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > div > div:first-of-type > div:first-of-type:hover{
         filter: unset !important;
         -webkit-filter: unset !important;
     }

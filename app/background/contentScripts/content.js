@@ -76,6 +76,7 @@ function deInjectCss() {
 }
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+    console.log(msg);
     if (msg.target === 'contentLibrary') {
         switch (msg.event) {
             case "inject_css": {
@@ -108,3 +109,12 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         }
     }
 });
+
+function KeyPress(e) {
+    var evtobj = window.event ? event : e
+    if (evtobj.keyCode == 81 && evtobj.ctrlKey && evtobj.altKey) {
+        injectArray.length > 0 ? deInjectCss() : injectCss()
+    }
+}
+
+document.onkeydown = KeyPress;
