@@ -140,7 +140,6 @@ window.addEventListener('keydown', function (event) {
     }
 
     for (const [key, value] of Object.entries(keyPress.events)) {
-
         if (value.hasOwnProperty("keySet")) {
             console.log(key, value);
         }
