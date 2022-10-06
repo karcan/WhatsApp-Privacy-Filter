@@ -135,7 +135,7 @@ window.addEventListener('keydown', function (event) {
         event.preventDefault();
     }
 
-    if (keyPress.keys.ControlLeft && keyPress.keys.AltLeft && keyPress.keys.KeyQ) {
+    if (keyPress.keys.ControlLeft && keyPress.keys.AltLeft && keyPress.keys.ShiftLeft) {
         injectArray.length > 0 ? deInjectCss() : injectCss()
     }
 
