@@ -110,11 +110,47 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     }
 });
 
-function KeyPress(e) {
-    var evtobj = window.event ? event : e
-    if (evtobj.keyCode == 81 && evtobj.ctrlKey && evtobj.altKey) {
+var keyPress = {
+    keys: { ShiftLeft: false, ControlLeft: false, AltLeft: false, ArrowUp: false, ArrowDown: false, ArrowLeft: false, ArrowRight: false, KeyN: false, KeyM: false, KeyQ: false },
+    events: {
+        injectionSet: {
+            keySet: ["ControlLeft", "AltLeft", "KeyQ"],
+            fire: {
+                function() {
+                    injectArray.length > 0 ? deInjectCss() : injectCss()
+                }
+            }
+        }
+    }
+};
+
+window.addEventListener('keydown', function (event) {
+    var code = (window.event ? event : e).code;
+
+    if (keyPress.keys.hasOwnProperty(code)) {
+        keyPress.keys[code] = true;
+    }
+
+    if (code === "ControlLeft" || code === "AltLeft") {
+        event.preventDefault();
+    }
+
+    if (keyPress.keys.ControlLeft && keyPress.keys.AltLeft && keyPress.keys.KeyQ) {
         injectArray.length > 0 ? deInjectCss() : injectCss()
     }
-}
 
-document.onkeydown = KeyPress;
+    for (const [key, value] of Object.entries(keyPress.events)) {
+
+        if (value.hasOwnProperty("keySet")) {
+            console.log(key, value);
+        }
+    }
+
+});
+
+window.addEventListener('keyup', function (event) {
+    var code = (window.event ? event : e).code;
+    if (keyPress.keys.hasOwnProperty(code)) {
+        keyPress.keys[code] = false;
+    }
+});
