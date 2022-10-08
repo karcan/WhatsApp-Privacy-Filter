@@ -125,7 +125,7 @@ window.addEventListener('keydown', function (event) {
 
     chrome.runtime.sendMessage({ target: "background", event: "get_settings" }, function (response) {
         console.log(response.response.settings.keyPress.keys, keyPress.keys);
-        if (JSON.stringify(response.response.settings.keyPress.keys) == JSON.stringify(keyPress.keys)) {
+        if (JSON.stringify(response.response.settings.keyPress.keys.sort()) == JSON.stringify(keyPress.keys.sort())) {
             injectArray.length > 0 ? deInjectCss() : injectCss()
         }
     });
@@ -141,4 +141,16 @@ window.addEventListener('keyup', function (event) {
     if (index > -1) {
         keyPress.keys.splice(index, 1);
     }
+});
+
+window.addEventListener('blur', function (event) {
+    keyPress.keys = [];
+
+    console.log(keyPress.keys);
+});
+
+window.addEventListener('focus', function (event) {
+    keyPress.keys = [];
+
+    console.log(keyPress.keys);
 });

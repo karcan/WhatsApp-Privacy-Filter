@@ -56,5 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Response", response);
         });
     });
+
+    document.getElementById("donate").addEventListener('click', function (event) {
+        window.open("https://www.patreon.com/karcan", '_blank');
+
+    });
 });
 

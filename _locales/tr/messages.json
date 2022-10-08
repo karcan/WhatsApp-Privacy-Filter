@@ -12,7 +12,7 @@
     "message": "Eklenti ayarları bir sonraki sürüm ile birlikte eklenecektir."
   },
   "popup_description": {
-    "message": "Gizlilik filtresini 'CTRL + ALT + Q' tuş kombinasyonu ile aktif/pasif yapabilirsiniz."
+    "message": "Gizlilik filtresini eklenti ayarlarından tuş kombinasyonu ataması yaparak kolayca aktif/pasif yapabilirsiniz."
   },
   "option_enableDisableShortcut": {
     "message": "Aktif/Pasif kısayol tuşları"

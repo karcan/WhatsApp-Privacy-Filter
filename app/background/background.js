@@ -37,6 +37,16 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         else if (msg.event === "get_settings") {
 
             chrome.storage.local.get(['settings'], function (result) {
+                if (!result.hasOwnProperty("settings")) {
+                    result = {
+                        settings: {
+                            keyPress: {
+                                keys:["ControlLeft", "AltLeft", "ShiftLeft"]
+                            }
+                        }
+                    }
+                }
+
                 console.log('Value currently is ', result);
 
                 sendResponse({ response: result });
@@ -47,7 +57,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         else {
             sendResponse({ response: "unknown" });
         }
-  
+
     }
 });
 

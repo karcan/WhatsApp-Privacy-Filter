@@ -57,6 +57,7 @@ input[type=text] {
             -moz-box-sizing: border-box; /* Firefox, other Gecko */
             box-sizing: border-box; /* Opera/IE 8+ */
             margin: 0 -3px;
+            font-size:11px;
         }
 
 .bottom {

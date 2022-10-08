@@ -12,7 +12,7 @@
     "message": "Extension configuration will be added with next version"
   },
   "popup_description": {
-    "message": "You can active/pasive privacy filter with key combination that 'CTRL + ALT + Q'"
+    "message": "You can active/pasive easily privacy filter with setting key combination on extension popup"
   },
   "option_enableDisableShortcut": {
     "message": "Shortcut for enable/disable"
