@@ -5,10 +5,19 @@
   "app_description": {
     "message": "WhatsApp Web için Gizlilik Filtresi"
   },
+  "app_donate": {
+    "message": "Bağış Yap"
+  },
   "welcome_description": {
     "message": "Eklenti ayarları bir sonraki sürüm ile birlikte eklenecektir."
   },
   "popup_description": {
     "message": "Gizlilik filtresini 'CTRL + ALT + Q' tuş kombinasyonu ile aktif/pasif yapabilirsiniz."
+  },
+  "option_enableDisableShortcut": {
+    "message": "Aktif/Pasif kısayol tuşları"
+  },
+  "option_save": {
+    "message": "Ayarları kaydet"
   }
 }

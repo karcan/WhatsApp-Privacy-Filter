@@ -111,45 +111,34 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 });
 
 var keyPress = {
-    keys: { ShiftLeft: false, ControlLeft: false, AltLeft: false, ArrowUp: false, ArrowDown: false, ArrowLeft: false, ArrowRight: false, KeyN: false, KeyM: false, KeyQ: false },
-    events: {
-        injectionSet: {
-            keySet: ["ControlLeft", "AltLeft", "KeyQ"],
-            fire: {
-                function() {
-                    injectArray.length > 0 ? deInjectCss() : injectCss()
-                }
-            }
-        }
-    }
+    keys: []
 };
 
 window.addEventListener('keydown', function (event) {
     var code = (window.event ? event : e).code;
+    event.preventDefault();
 
-    if (keyPress.keys.hasOwnProperty(code)) {
-        keyPress.keys[code] = true;
+    const index = keyPress.keys.indexOf(code);
+    if (index == -1) {
+        keyPress.keys.push(code)
     }
 
-    if (code === "ControlLeft" || code === "AltLeft") {
-        event.preventDefault();
-    }
-
-    if (keyPress.keys.ControlLeft && keyPress.keys.AltLeft && keyPress.keys.ShiftLeft) {
-        injectArray.length > 0 ? deInjectCss() : injectCss()
-    }
-
-    for (const [key, value] of Object.entries(keyPress.events)) {
-        if (value.hasOwnProperty("keySet")) {
-            console.log(key, value);
+    chrome.runtime.sendMessage({ target: "background", event: "get_settings" }, function (response) {
+        console.log(response.response.settings.keyPress.keys, keyPress.keys);
+        if (JSON.stringify(response.response.settings.keyPress.keys) == JSON.stringify(keyPress.keys)) {
+            injectArray.length > 0 ? deInjectCss() : injectCss()
         }
-    }
+    });
+
 
 });
 
 window.addEventListener('keyup', function (event) {
     var code = (window.event ? event : e).code;
-    if (keyPress.keys.hasOwnProperty(code)) {
-        keyPress.keys[code] = false;
+    event.preventDefault();
+
+    const index = keyPress.keys.indexOf(code);
+    if (index > -1) {
+        keyPress.keys.splice(index, 1);
     }
 });

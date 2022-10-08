@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="/app/public/js/index.js"></script>
     <link rel="stylesheet" href="/app/public/css/index.css">
 </head>
 <body>
-    <b>__MSG_popup_description__</b>
 
+    <div class="logo">
+        <img src="/app/public/logo.png" />
+        <h1>
+            __MSG_app_title__
+        </h1>
+    </div>
+
+    <div class="options">
+        <div class="line">
+            <label for="enableDisableShortcut">__MSG_option_enableDisableShortcut__</label>
+            <input type="text" id="enableDisableShortcut" />
+        </div>
+    </div>
+
+    <div class="bottom">
+        <button id="save">__MSG_option_save__</button>
+        <button id="donate">__MSG_app_donate__</button>
+    </div>
+
+    
+    <script src="/app/public/js/index.js"></script>
     <script src="/app/public/js/i18n.js"></script>
 </body>
 </html>

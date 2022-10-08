@@ -1,6 +1,79 @@
 body {
-    min-height:550px;
-    max-height:550px;
-    min-width:400px;
-    max-width:400px;
+    width: 375px;
+    height: 500px;
+    background-color: #333;
+    user-select: none;
+    border: 2px dashed #828282;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+input[type=text] {
+    -webkit-box-sizing: border-box; /* Safari, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+.logo {
+    margin: auto;
+    width: 100%;
+    padding: 25px 10px 10px 10px;
+    text-align: center;
+    -webkit-box-sizing: border-box; /* Safari, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+    .logo img {
+        width: 75px;
+        margin: auto;
+    }
+
+    .logo h1 {
+        color: #FFF;
+        font-size: 15px;
+    }
+
+
+.options {
+    padding: 10px;
+    width: 100%;
+}
+
+    .options .line {
+        width: 100%;
+    }
+
+        .options .line label {
+            display: inline-block;
+            width: 50%;
+        }
+
+        .options .line input {
+            display: inline-block;
+            width: 45%;
+            -webkit-box-sizing: border-box; /* Safari, other WebKit */
+            -moz-box-sizing: border-box; /* Firefox, other Gecko */
+            box-sizing: border-box; /* Opera/IE 8+ */
+            margin: 0 -3px;
+        }
+
+.bottom {
+    width: 100%;
+    position: absolute;
+    padding: 10px;
+    bottom: 0;
+    text-align: center;
+    -webkit-box-sizing: border-box; /* Safari, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+}
+    .bottom button {
+        height:30px;
+        width:120px;
+    }
+
+.bottom #donate{
+
 }

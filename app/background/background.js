@@ -11,21 +11,43 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     console.log("background : ", msg);
     if (msg.target === 'background') {
-        switch (msg.event) {
-            case "re_inject_css": {
-                chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, function (tabs) {
-                    for (var tab of tabs) {
-                        chrome.tabs.sendMessage(tab.id, { target: "contentLibrary", event: "inject_css" }, function (msg) {
-                            console.log("Response", msg);
-                        });
-                    }
-                })
+        if (msg.event === "re_inject_css") {
+            chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, function (tabs) {
+                for (var tab of tabs) {
+                    chrome.tabs.sendMessage(tab.id, { target: "contentLibrary", event: "inject_css" }, function (msg) {
+                        console.log("Response", msg);
+                    });
+                }
+            })
+            sendResponse({ response: "CSS re-injected." });
 
-                sendResponse({ response: "CSS re-injected." });
-            }
-            default:
-                sendResponse({ response: "unknown" });
+            return true;
         }
+
+        else if (msg.event === "save_settings") {
+            chrome.storage.local.set({ settings: msg.settings }, function () {
+                console.log('Value is set to ' + msg.settings);
+
+                sendResponse({ response: "settings are saved." });
+            });
+
+            return true;
+        }
+
+        else if (msg.event === "get_settings") {
+
+            chrome.storage.local.get(['settings'], function (result) {
+                console.log('Value currently is ', result);
+
+                sendResponse({ response: result });
+            });
+
+            return true;
+        }
+        else {
+            sendResponse({ response: "unknown" });
+        }
+  
     }
 });
 
