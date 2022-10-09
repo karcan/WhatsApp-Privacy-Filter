@@ -14,8 +14,38 @@
   "popup_description": {
     "message": "Gizlilik filtresini eklenti ayarlarından tuş kombinasyonu ataması yaparak kolayca aktif/pasif yapabilirsiniz."
   },
+  "option_name": {
+    "message": "Ayarlar"
+  },
   "option_enableDisableShortcut": {
     "message": "Aktif/Pasif kısayol tuşları"
+  },
+  "option_toggle": {
+    "message": "Aktif/Pasif"
+  },
+  "option_recentMessage_header": {
+    "message": "Son mesajın başlığı"
+  },
+  "option_recentMessage_avatar": {
+    "message": "Son mesajın' avatarı"
+  },
+  "option_recentMessage_time": {
+    "message": "Son mesajın' sati"
+  },
+  "option_recentMessage_sender": {
+    "message": "Son mesajın göndereni'"
+  },
+  "option_recentMessage_content": {
+    "message": "Son mesajın içeriği"
+  },
+  "option_recentMessage_tick": {
+    "message": "Son mesajın durumu"
+  },
+  "option_chatBox_title": {
+    "message": "Sohbet kutusu başlığı"
+  },
+  "option_chatBox_messageBox": {
+    "message": "Sohbet kutusu mesjları"
   },
   "option_save": {
     "message": "Ayarları kaydet"

@@ -14,8 +14,38 @@
   "popup_description": {
     "message": "You can active/pasive easily privacy filter with setting key combination on extension popup"
   },
+  "option_name": {
+    "message": "Settings"
+  },
   "option_enableDisableShortcut": {
     "message": "Shortcut for enable/disable"
+  },
+  "option_toggle": {
+    "message": "Toggle"
+  },
+  "option_recentMessage_header": {
+    "message": "Recent message's header"
+  },
+  "option_recentMessage_avatar": {
+    "message": "Recent message's avatar"
+  },
+  "option_recentMessage_time": {
+    "message": "Recent message's time"
+  },
+  "option_recentMessage_sender": {
+    "message": "Recent message's sender"
+  },
+  "option_recentMessage_content": {
+    "message": "Recent message's content"
+  },
+  "option_recentMessage_tick": {
+    "message": "Recent message's tick"
+  },
+  "option_chatBox_title": {
+    "message": "Chat box title"
+  },
+  "option_chatBox_messageBox": {
+    "message": "Chat box message box"
   },
   "option_save": {
     "message": "Save settings"

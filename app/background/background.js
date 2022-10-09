@@ -1,25 +1,74 @@
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-    if (tab.url.match(/(https?:\/\/|http?:\/\/)*(whatsapp)\.(com)/g)) {
-        if (changeInfo['status'] === "complete") {
-            chrome.tabs.sendMessage(tabId, { target: "contentLibrary", event: "inject_css" }, function (response) {
-                console.log("Response", response);
-            });
+chrome.storage.local.get(['settings'], function (result) {
+    if (!result.hasOwnProperty("settings")) {
+        result = {
+            settings: {
+                toggle: true,
+                recentMessageHeader: true,
+                recentMessageAvatar: true,
+                recentMessageTime: true,
+                recentMessageSender: true,
+                recentMessageContent: true,
+                recentMessageTick: true,
+                chatBoxTitle: true,
+                chatBoxMessageBox: true,
+                keyPress: {
+                    keys: ["ControlLeft", "AltLeft", "ShiftLeft"]
+                }
+            }
         }
     }
+
+
+    chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+        if (tab.url.match(/(https?:\/\/|http?:\/\/)*(whatsapp)\.(com)/g)) {
+            if (changeInfo['status'] === "complete") {
+                chrome.tabs.sendMessage(tabId, { target: "contentLibrary", event: "inject_css", settings: result.settings }, function (response) {
+                    console.log("Response", response);
+                });
+            }
+        }
+    });
+
 });
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     console.log("background : ", msg);
     if (msg.target === 'background') {
         if (msg.event === "re_inject_css") {
-            chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, function (tabs) {
-                for (var tab of tabs) {
-                    chrome.tabs.sendMessage(tab.id, { target: "contentLibrary", event: "inject_css" }, function (msg) {
-                        console.log("Response", msg);
-                    });
+
+            chrome.storage.local.get(['settings'], function (result) {
+                if (!result.hasOwnProperty("settings")) {
+                    result = {
+                        settings: {
+                            toggle: true,
+                            recentMessageHeader: true,
+                            recentMessageAvatar: true,
+                            recentMessageTime: true,
+                            recentMessageSender: true,
+                            recentMessageContent: true,
+                            recentMessageTick: true,
+                            chatBoxTitle: true,
+                            chatBoxMessageBox: true,
+                            keyPress: {
+                                keys: ["ControlLeft", "AltLeft", "ShiftLeft"]
+                            }
+                        }
+                    }
                 }
-            })
-            sendResponse({ response: "CSS re-injected." });
+
+                chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, function (tabs) {
+                    for (var tab of tabs) {
+                        chrome.tabs.sendMessage(tab.id, { target: "contentLibrary", event: "inject_css", settings: result.settings }, function (msg) {
+                            console.log("Response", msg);
+                        });
+                    }
+                })
+
+                sendResponse({ response: "CSS re-injected." });
+
+            });
+
+
 
             return true;
         }
@@ -40,14 +89,21 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
                 if (!result.hasOwnProperty("settings")) {
                     result = {
                         settings: {
+                            toggle: true,
+                            recentMessageHeader: true,
+                            recentMessageAvatar: true,
+                            recentMessageTime: true,
+                            recentMessageSender: true,
+                            recentMessageContent: true,
+                            recentMessageTick: true,
+                            chatBoxTitle: true,
+                            chatBoxMessageBox: true,
                             keyPress: {
-                                keys:["ControlLeft", "AltLeft", "ShiftLeft"]
+                                keys: ["ControlLeft", "AltLeft", "ShiftLeft"]
                             }
                         }
                     }
                 }
-
-                console.log('Value currently is ', result);
 
                 sendResponse({ response: result });
             });

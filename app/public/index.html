@@ -10,12 +10,81 @@
         <h1>
             __MSG_app_title__
         </h1>
+        <label class="switch x2">
+            <input type="checkbox" id="toggle">
+            <span class="slider round x2"></span>
+        </label>
     </div>
 
     <div class="options">
+        <b class="name">__MSG_option_name__</b>
         <div class="line">
-            <label for="enableDisableShortcut">__MSG_option_enableDisableShortcut__</label>
+            <label class="label" for="enableDisableShortcut">__MSG_option_enableDisableShortcut__</label>
             <input type="text" id="enableDisableShortcut" />
+        </div>
+
+        <div class="line">
+            <label class="label" for="recentMessageHeader">__MSG_option_recentMessage_header__</label>
+            <label class="switch">
+                <input type="checkbox" id="recentMessageHeader">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="line">
+            <label class="label" for="recentMessageAvatar">__MSG_option_recentMessage_avatar__</label>
+            <label class="switch">
+                <input type="checkbox" id="recentMessageAvatar">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="line">
+            <label class="label" for="recentMessageTime">__MSG_option_recentMessage_time__</label>
+            <label class="switch">
+                <input type="checkbox" id="recentMessageTime">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="line">
+            <label class="label" for="recentMessageSender">__MSG_option_recentMessage_sender__</label>
+            <label class="switch">
+                <input type="checkbox" id="recentMessageSender">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="line">
+            <label class="label" for="recentMessageContent">__MSG_option_recentMessage_content__</label>
+            <label class="switch">
+                <input type="checkbox" id="recentMessageContent">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="line">
+            <label class="label" for="recentMessageTick">__MSG_option_recentMessage_tick__</label>
+            <label class="switch">
+                <input type="checkbox" id="recentMessageTick">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="line">
+            <label class="label" for="chatBoxTitle">__MSG_option_chatBox_title__</label>
+            <label class="switch">
+                <input type="checkbox" id="chatBoxTitle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="line">
+            <label class="label" for="chatBoxMessageBox">__MSG_option_chatBox_messageBox__</label>
+            <label class="switch">
+                <input type="checkbox" id="chatBoxMessageBox">
+                <span class="slider"></span>
+            </label>
         </div>
     </div>
 
@@ -24,7 +93,7 @@
         <button id="donate">__MSG_app_donate__</button>
     </div>
 
-    
+
     <script src="/app/public/js/index.js"></script>
     <script src="/app/public/js/i18n.js"></script>
 </body>

@@ -1,4 +1,125 @@
 let injectArray = [];
+let css = "";
+let settings;
+
+function declareCss() {
+
+    css = `
+        #pane-side > div:first-of-type > div > div > div:hover * {
+            filter: unset !important;
+            -webkit-filter: unset !important;
+        }
+    `;
+
+    if (settings.recentMessageHeader) {
+        css += `\n
+            /*
+                Recent Header
+            */
+            #pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:first-of-type > div:first-of-type > span {
+                filter: blur(3.6px);
+                -webkit-filter: blur(3.6px);
+            }
+        `;
+    }
+    if (settings.recentMessageAvatar) {
+        css += `\n
+            /*
+                Recent Avatar
+            */
+            #pane-side > div:first-of-type > div > div > div > div > div > div:first-of-type > div > div {
+                filter: blur(3.6px);
+                -webkit-filter: blur(3.6px);
+            }
+        `;
+    }
+    if (settings.recentMessageTime) {
+        css += `\n
+            /*
+                Recent > Last Message Time
+            */
+            #pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(2) {
+                filter: blur(3.6px);
+                -webkit-filter: blur(3.6px);
+            }
+
+        `;
+    }
+    if (settings.recentMessageSender) {
+        css += `\n
+            /*
+                Recent Last Message Sender
+            */
+            #pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > span:first-of-type {
+                filter: blur(3.6px);
+                -webkit-filter: blur(3.6px);
+            }
+
+        `;
+    }
+
+    if (settings.recentMessageContent) {
+        css += `\n
+            /*
+                Recent Last Message Content
+            */
+            #pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > span:nth-of-type(3) {
+                filter: blur(3.6px);
+                -webkit-filter: blur(3.6px);
+            }
+
+        `;
+    }
+
+    if (settings.recentMessageTick) {
+        css += `\n
+            /*
+                Recent Last Message Status
+            */
+            #pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > div:first-of-type {
+                filter: blur(3.6px);
+                -webkit-filter: blur(3.6px);
+            }
+        `;
+    }
+
+    if (settings.chatBoxTitle) {
+        css += `\n
+            /*
+                Chat Box > Chat Title
+            */
+            #main > header > div:first-of-type,
+            #main > header > div:nth-of-type(2) {
+                filter: blur(5.0px);
+                -webkit-filter: blur(5.0px);
+            }
+
+            #main > header:hover * {
+                filter: unset !important;
+                -webkit-filter: unset !important;
+            }
+        `;
+    }
+
+    if (settings.chatBoxMessageBox) {
+        css += `\n
+            /*
+                Chat Box > Message Box
+            */
+            #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div,
+            #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div {
+                filter: blur(5.0px);
+                -webkit-filter: blur(5.0px);
+            }
+
+                #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div:hover,
+                #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div:hover {
+                    filter: unset !important;
+                    -webkit-filter: unset !important;
+                }
+        `;
+    }
+};
 
 function scriptFromFile(file, id, style = null) {
     if (style) {
@@ -65,7 +186,8 @@ function inject(scripts) {
 }
 
 function injectCss() {
-    inject([scriptFromFile("app/background/contentStyles/content.css", "contentCss", true)]);
+    inject([scriptFromSource(css, "contentCss", true)]);
+
 };
 
 function deInjectCss() {
@@ -78,34 +200,40 @@ function deInjectCss() {
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     console.log(msg);
     if (msg.target === 'contentLibrary') {
-        switch (msg.event) {
-            case "inject_css": {
 
-                injectCss();
-                sendResponse({ response: "CSS Injected" });
-            }
-                break;
+        if (msg.event === "inject_css") {
+            settings = msg.settings;
 
-            case "de_inject_css": {
+            if (settings.toggle) {
+                declareCss(), injectCss();
+            } else {
 
-                deInjectCss();
-                sendResponse({ response: "CSS De-Injected" });
-            }
-                break;
-
-            case "clear_localStorage": {
-                localStorage.clear();
-                sendResponse({ response: "localStorage Cleared" })
-            }
-                break;
-
-            case "refresh_page": {
-                location.reload();
-                sendResponse({ response: "Page Refreshed" })
+                declareCss(), deInjectCss();
             }
 
-            default:
-                sendResponse({ response: "Unknown" });
+            sendResponse({ response: "CSS Injected" });
+
+            return true;
+        }
+        if (msg.event === "de_inject_css") {
+            declareCss(), deInjectCss();
+            sendResponse({ response: "CSS De-Injected" });
+
+            return true;
+        }
+        if (msg.event === "clear_localStorage") {
+            localStorage.clear();
+            sendResponse({ response: "localStorage Cleared" })
+
+            return true;
+        }
+        if (msg.event === "refresh_page") {
+            location.reload();
+            sendResponse({ response: "Page Refreshed" })
+
+            return true;
+        } else {
+            sendResponse({ response: "Unknown" });
         }
     }
 });
@@ -116,7 +244,10 @@ var keyPress = {
 
 window.addEventListener('keydown', function (event) {
     var code = (window.event ? event : e).code;
-    event.preventDefault();
+
+    if (code === "AltLeft" || code === "ControlLeft" || code === "ShiftLeft" || code === "AltRight" || code === "ControlLeft" || code === "ShiftLeft") {
+        event.preventDefault();
+    }
 
     const index = keyPress.keys.indexOf(code);
     if (index == -1) {
@@ -124,8 +255,7 @@ window.addEventListener('keydown', function (event) {
     }
 
     chrome.runtime.sendMessage({ target: "background", event: "get_settings" }, function (response) {
-        console.log(response.response.settings.keyPress.keys, keyPress.keys);
-        if (JSON.stringify(response.response.settings.keyPress.keys.sort()) == JSON.stringify(keyPress.keys.sort())) {
+        if (JSON.stringify(response.response.settings.keyPress.keys.sort()) == JSON.stringify(keyPress.keys.sort()) && settings.toggle) {
             injectArray.length > 0 ? deInjectCss() : injectCss()
         }
     });

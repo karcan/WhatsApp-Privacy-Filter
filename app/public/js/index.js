@@ -6,6 +6,15 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     var settings = {
+        toggle: null,
+        recentMessageHeader: null,
+        recentMessageAvatar: null,
+        recentMessageTime: null,
+        recentMessageSender: null,
+        recentMessageContent: null,
+        recentMessageTick: null,
+        chatBoxTitle: null,
+        chatBoxMessageBox: null,
         keyPress : {
             keys: []
         }
@@ -14,6 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
     chrome.runtime.sendMessage({ target: "background", event: "get_settings" }, function (response) {
         settings = response.response.settings;
         document.getElementById("enableDisableShortcut").value = settings.keyPress.keys.join(" + ");
+        document.getElementById("toggle").checked = settings.toggle;
+        document.getElementById("recentMessageHeader").checked = settings.recentMessageHeader;
+        document.getElementById("recentMessageAvatar").checked = settings.recentMessageAvatar;
+        document.getElementById("recentMessageTime").checked = settings.recentMessageTime;
+        document.getElementById("recentMessageSender").checked = settings.recentMessageSender;
+        document.getElementById("recentMessageContent").checked = settings.recentMessageContent;
+        document.getElementById("recentMessageTick").checked = settings.recentMessageTick;
+        document.getElementById("chatBoxTitle").checked = settings.chatBoxTitle;
+        document.getElementById("chatBoxMessageBox").checked = settings.chatBoxMessageBox;
+
+        console.log(settings);
     });
 
     window.addEventListener('keyup', function (event) {
@@ -52,11 +72,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById("save").addEventListener('click', function (event) {
+        settings.toggle = document.getElementById("toggle").checked;
+        settings.recentMessageHeader = document.getElementById("recentMessageHeader").checked;
+        settings.recentMessageAvatar = document.getElementById("recentMessageAvatar").checked;
+        settings.recentMessageTime = document.getElementById("recentMessageTime").checked;
+        settings.recentMessageSender = document.getElementById("recentMessageSender").checked;
+        settings.recentMessageContent = document.getElementById("recentMessageContent").checked;
+        settings.recentMessageTick = document.getElementById("recentMessageTick").checked;
+        settings.chatBoxTitle = document.getElementById("chatBoxTitle").checked;
+        settings.chatBoxMessageBox = document.getElementById("chatBoxMessageBox").checked;
+
         chrome.runtime.sendMessage({ target: "background", event: "save_settings", settings: settings }, function (response) {
             console.log("Response", response);
         });
-    });
 
+        chrome.runtime.sendMessage({ target: "background", event: "re_inject_css", settings: settings }, function (response) {
+            console.log("Response", response);
+        });
+    });
     document.getElementById("donate").addEventListener('click', function (event) {
         window.open("https://www.patreon.com/karcan", '_blank');
 
