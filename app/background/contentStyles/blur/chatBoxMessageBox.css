@@ -3,13 +3,13 @@
 */
 #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div,
 #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div {
-    filter: blur(chatBoxMessageBoxBlurPx); grayscale(1);
-    -webkit-filter: blur(chatBoxMessageBoxBlurPx); grayscale(1);
+    filter: blur(chatBoxMessageBoxBlurPx) grayscale(1);
+    -webkit-filter: blur(chatBoxMessageBoxBlurPx) grayscale(1);
 
 }
 
     #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div:hover,
     #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div:hover {
-        filter: unset !important; grayscale(0);
-        -webkit-filter: unset !important; grayscale(0);
+        filter: unset !important;
+        -webkit-filter: unset !important;
     }

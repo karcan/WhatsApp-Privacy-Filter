@@ -18,7 +18,9 @@ chrome.storage.local.get(
         'chatBoxMessageBox',
         'chatBoxMessageBoxBlurPx',
         'keyPress',
-        'fullScreen'
+        'fullScreen',
+        'windowOut',
+        'windowFocus'
     ], function (option) {
         console.log('content loaded')
         let keyPress = [];
@@ -31,9 +33,6 @@ chrome.storage.local.get(
         }
 
         function addStyleFromFile(id, type) {
-
-            removeStyleFromFile(id);
-
             const url = chrome.runtime.getURL('app/background/contentStyles/'+ type+ '/' + id + '.css');
             fetch(url)
                 .then(
@@ -46,10 +45,19 @@ chrome.storage.local.get(
 
                         // Examine the text in the response
                         response.text().then(function (data) {
-                            var script = document.createElement("style");
-                            script.id = id;
-                            script.textContent = data.replace(id + 'BlurPx', option[id + 'BlurPx'] + 'px');
-                            document.head.appendChild(script);
+                            var script;
+
+                            if (script = document.getElementById(id)) {
+                                script.textContent = data.replaceAll(id + 'BlurPx', option[id + 'BlurPx'] + 'px');
+                                script.setAttribute('modifyDate', new Date().toLocaleString())
+                            } else {
+                                script = document.createElement("style");
+                                script.id = id;
+                                script.textContent = data.replaceAll(id + 'BlurPx', option[id + 'BlurPx'] + 'px');
+                                script.setAttribute('createDate', new Date().toLocaleString())
+                                document.head.appendChild(script);
+                            }
+
                             return script;
                         });
                     }
@@ -141,13 +149,18 @@ chrome.storage.local.get(
 
 
         /* blur */
-        window.addEventListener('blur', function (event) {
+        window.onblur = function (event) {
             keyPress = [];
-        });
+
+            option.windowOut && inject();
+
+        };
 
         /* focus */
-        window.addEventListener('focus', function (event) {
+        window.onfocus = function (event) {
             keyPress = [];
-        });
+
+            option.windowFocus && inject();
+        };
     }
 );

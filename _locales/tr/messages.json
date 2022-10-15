@@ -12,10 +12,10 @@
     "message": "Ekranı ayır"
   },
   "welcome_description": {
-    "message": "Eklenti ayarları bir sonraki sürüm ile birlikte eklenecektir."
+    "message": "v1.3'e Hoşgeldiniz"
   },
   "popup_description": {
-    "message": "Gizlilik filtresini eklenti ayarlarından tuş kombinasyonu ataması yaparak kolayca aktif/pasif yapabilirsiniz."
+    "message": "Kişiselleştirilmiş ayarlar için tarayıcınızdan eklentileri açıp sabitlemeyi unutmayın."
   },
   "option_name": {
     "message": "Ayarlar"
@@ -55,5 +55,17 @@
   },
   "option_fullScreen": {
     "message": "Tam Ekran"
+  },
+  "option_windowOut": {
+    "message": "Pencere dışına çıkınca aktif et"
+  },
+  "option_windowFocus": {
+    "message": "Pencereye dönünce aktif et"
+  },
+  "chrome_store": {
+    "message": "Chrome Mağazası"
+  },
+  "github": {
+    "message": "GitHub"
   }
 }

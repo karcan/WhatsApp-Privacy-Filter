@@ -8,6 +8,7 @@
 
     <div class="logo">
         <img src="/app/public/logo.png" />
+        <button id="popout">__MSG_app_popout__</button>
         <h1>
             __MSG_app_title__
         </h1>
@@ -15,13 +16,14 @@
             <input type="checkbox" id="toggle">
             <span class="slider round x2"></span>
         </label>
+        <br />
     </div>
 
     <div class="options">
         <b class="name">__MSG_option_name__</b>
         <div class="line">
             <label class="label" for="keyPress">__MSG_option_keyPress__</label>
-            <input type="text" id="keyPress"/>
+            <input type="text" id="keyPress" />
             <button id="keyPressAssign">__MSG_option_keyPressAssign__</button>
         </div>
 
@@ -104,11 +106,36 @@
                 <span class="slider round"></span>
             </label>
         </div>
+
+        <div class="line">
+            <label class="label" for="windowFocus">__MSG_option_windowFocus__</label>
+            <label class="switch">
+                <input type="checkbox" id="windowFocus">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="line">
+            <label class="label" for="windowOut">__MSG_option_windowOut__</label>
+            <label class="switch">
+                <input type="checkbox" id="windowOut">
+                <span class="slider round"></span>
+            </label>
+        </div>
     </div>
 
+    
     <div class="bottom">
-        <button id="donate">__MSG_app_donate__</button>
-        <button id="popout">__MSG_app_popout__</button>
+        <b id="appName">__MSG_app_title__ - </b>
+        <i id="appVersion"></i>
+        <br />
+        <a href="#" id="donate">__MSG_app_donate__</a>
+        -
+        <a href="#" id="chromeStore">__MSG_chrome_store__</a>
+        -
+        <a href="#" id="github">__MSG_github__</a>
+        <!--<button id="donate">__MSG_app_donate__</button>
+        -->
     </div>
 
 

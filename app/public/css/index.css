@@ -25,6 +25,21 @@ input[type=text] {
     box-sizing: border-box; /* Opera/IE 8+ */
 }
 
+    .logo #popout {
+        position: absolute;
+        border-radius: 20px;
+        background-color: #04AA6D;
+        border: 1px dashed #d8d8d8;
+        font-weight: bold;
+        right:15px;
+        width: 100px;
+        height: 30px;
+    }
+
+        .logo #popout:hover {
+            background-color: #2ECC71;
+        }
+
     .logo img {
         width: 75px;
         margin: auto;
@@ -37,7 +52,7 @@ input[type=text] {
 
 
 .options {
-    padding: 10px;
+    padding: 2px 10px;
     width: 100%;
     height: 300px;
     -webkit-box-sizing: border-box; /* Safari, other WebKit */
@@ -86,19 +101,24 @@ input[type=text] {
         }
 
 .bottom {
-    width: 100%;
+    width: 375px;
+    height: 35px;
+    background-color: #3d3d3d;
     position: absolute;
-    padding: 10px;
-    bottom: 0;
+    padding: 0;
+    bottom: 1px;
+    left:1px;
     text-align: center;
     -webkit-box-sizing: border-box; /* Safari, other WebKit */
     -moz-box-sizing: border-box; /* Firefox, other Gecko */
     box-sizing: border-box; /* Opera/IE 8+ */
 }
 
-    .bottom button {
-        height: 30px;
-        width: 120px;
+    .bottom a {
+        color:#FFF;
+        display:inline-block;
+        padding:0 10px;
+        font-weight:bold;
     }
 
     .bottom #donate {

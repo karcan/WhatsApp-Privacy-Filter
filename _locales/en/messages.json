@@ -12,10 +12,10 @@
     "message": "Pop out"
   },
   "welcome_description": {
-    "message": "Extension configuration will be added with next version"
+    "message": "Welcome to v1.3"
   },
   "popup_description": {
-    "message": "You can active/pasive easily privacy filter with setting key combination on extension popup"
+    "message": "Remember to pin extension on your browser for user options"
   },
   "option_name": {
     "message": "Settings"
@@ -55,5 +55,17 @@
   },
   "option_fullScreen": {
     "message": "Full Screen"
+  },
+  "option_windowOut": {
+    "message": "Enable when out of window"
+  },
+  "option_windowFocus": {
+    "message": "Enable when focus the window"
+  },
+  "chrome_store": {
+    "message": "Chrome Store"
+  },
+  "github": {
+    "message": "GitHub"
   }
 }

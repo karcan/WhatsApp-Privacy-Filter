@@ -19,10 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
             'chatBoxMessageBox',
             'chatBoxMessageBoxBlurPx',
             'keyPress',
-            'fullScreen'
+            'fullScreen',
+            'windowOut',
+            'windowFocus'
         ], function (option) {
 
             injectQueue = [];
+
+            let manifest = chrome.runtime.getManifest();
+            document.getElementById("appVersion").textContent = 'v' + manifest.version;
 
             function inject() {
                 chrome.tabs.query({ url: "*://web.whatsapp.com/*" }, function (tabs) {
@@ -49,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("chatBoxMessageBoxBlurPx").value = option.chatBoxMessageBoxBlurPx;
             document.getElementById("keyPress").value = option.keyPress.join(" + ");
             document.getElementById("fullScreen").checked = option.fullScreen;
+            document.getElementById("windowOut").checked = option.windowOut;
+            document.getElementById("windowFocus").checked = option.windowFocus;
 
 
             document.getElementById("toggle").addEventListener('change', function (e) {
@@ -127,6 +134,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 chrome.storage.local.set({ fullScreen: this.checked });
                 inject();
             });
+            document.getElementById("windowOut").addEventListener('change', function (e) {
+                chrome.storage.local.set({ windowOut: this.checked });
+                inject();
+            });
+            document.getElementById("windowFocus").addEventListener('change', function (e) {
+                chrome.storage.local.set({ windowFocus: this.checked });
+                inject();
+            });
 
             document.getElementById("keyPress").addEventListener('keydown', function (event) {
                 var code = (window.event ? event : e).code;
@@ -156,13 +171,12 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             document.getElementById("donate").addEventListener('click', function (event) {
+                event.preventDefault();
                 window.open("https://www.patreon.com/karcan", '_blank');
 
             });
 
             document.getElementById("popout").addEventListener('click', function (event) {
-
-
                 function getTabs() {
                     return new Promise((resolve, reject) => {
                         let tabArr = [];
@@ -198,12 +212,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
             })
 
-            //setInterval(() => {
-            //    console.log(injectQueue);
-            //    if (injectQueue.length > 0) {
-            //        injectQueue[0]();
-            //        injectQueue = [];
-            //    }
-            //}, 1000);
+            document.getElementById("chromeStore").addEventListener('click', function (event) {
+                event.preventDefault();
+                window.open("https://chrome.google.com/webstore/detail/whatsapp-privacy-filter/ppamjkdhajaohmhhhbccojhgigkmbkeb", '_blank');
+            });
+
+            document.getElementById("github").addEventListener('click', function (event) {
+                event.preventDefault();
+                window.open("https://github.com/karcan/WhatsApp-Privacy-Filter", '_blank');
+            });
+
+            setInterval(() => {
+                if (injectQueue.length > 0) {
+                    injectQueue[0]();
+                    injectQueue = [];
+                }
+            }, 1000);
         });
 });
