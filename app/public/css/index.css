@@ -1,12 +1,12 @@
 body {
     width: 375px;
     height: 580px;
-    background-color: #333;
+    background-color: #131313;
     user-select: none;
-    border: 2px dashed #828282;
+    border: 1px dashed #828282;
     padding: 0;
     margin: 0;
-    color: #fff;
+    color: #d8d8d8;
 }
 
 input[type=text] {
@@ -31,30 +31,30 @@ input[type=text] {
     }
 
     .logo h1 {
-        color: #FFF;
-        font-size: 15px;
+        color: #d8d8d8;
+        font-size: 20px;
     }
 
 
 .options {
     padding: 10px;
     width: 100%;
-    height:300px;
+    height: 300px;
     -webkit-box-sizing: border-box; /* Safari, other WebKit */
     -moz-box-sizing: border-box; /* Firefox, other Gecko */
     box-sizing: border-box; /* Opera/IE 8+ */
 }
 
     .options .name {
-        font-size:20px;
-        margin-bottom:20px;
-        display:block;
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: block;
     }
 
     .options .line {
         width: 100%;
-        margin-bottom: 7px;
-        padding-bottom: 7px;
+        margin-bottom: 3px;
+        padding-bottom: 3px;
         -webkit-box-sizing: border-box; /* Safari, other WebKit */
         -moz-box-sizing: border-box; /* Firefox, other Gecko */
         box-sizing: border-box; /* Opera/IE 8+ */
@@ -67,12 +67,22 @@ input[type=text] {
 
         .options .line input {
             display: inline-block;
-            width: 50%;
+            width: 33%;
             -webkit-box-sizing: border-box; /* Safari, other WebKit */
             -moz-box-sizing: border-box; /* Firefox, other Gecko */
             box-sizing: border-box; /* Opera/IE 8+ */
-            margin: 0 -3px;
-            font-size:11px;
+            margin: 0 0;
+            font-size: 11px;
+        }
+
+        .options .line button {
+            display: inline-block;
+            width: 15%;
+            -webkit-box-sizing: border-box; /* Safari, other WebKit */
+            -moz-box-sizing: border-box; /* Firefox, other Gecko */
+            box-sizing: border-box; /* Opera/IE 8+ */
+            margin: 0 0;
+            font-size: 11px;
         }
 
 .bottom {
@@ -85,14 +95,14 @@ input[type=text] {
     -moz-box-sizing: border-box; /* Firefox, other Gecko */
     box-sizing: border-box; /* Opera/IE 8+ */
 }
+
     .bottom button {
-        height:30px;
-        width:120px;
+        height: 30px;
+        width: 120px;
     }
 
-.bottom #donate{
-
-}
+    .bottom #donate {
+    }
 
 
 /* The switch - the box around the slider */
@@ -104,8 +114,8 @@ input[type=text] {
 }
 
     .switch.x2 {
-        width:80px;
-        height:40px;
+        width: 68px;
+        height: 30px;
     }
 
     /* Hide default HTML checkbox */
@@ -141,8 +151,10 @@ input[type=text] {
     }
 
     .slider.x2:before {
-        width:35px;
-        height:32px;
+        width: 40px;
+        height: 40px;
+        top: -5px;
+        left: -5px;
     }
 
 input:checked + .slider {
@@ -172,4 +184,35 @@ input:checked + .slider.x2:before {
 
     .slider.round:before {
         border-radius: 50%;
+    }
+
+.range {
+    -webkit-appearance: none;
+    height: 7px;
+    width:30% !important; 
+    background: #d8d8d8;
+    margin-left:20px !important;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+    .range:hover {
+        background: #e6e6e6;
+    }
+
+    .range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+
+    .range::-moz-range-thumb {
+        width: 15px;
+        height: 15px;
+        background: #04AA6D;
+        cursor: pointer;
     }

@@ -8,6 +8,9 @@
   "app_donate": {
     "message": "Bağış Yap"
   },
+  "app_popout": {
+    "message": "Ekranı ayır"
+  },
   "welcome_description": {
     "message": "Eklenti ayarları bir sonraki sürüm ile birlikte eklenecektir."
   },
@@ -17,8 +20,11 @@
   "option_name": {
     "message": "Ayarlar"
   },
-  "option_enableDisableShortcut": {
+  "option_keyPress": {
     "message": "Aktif/Pasif kısayol tuşları"
+  },
+  "option_keyPressAssign": {
+    "message": "Ata"
   },
   "option_toggle": {
     "message": "Aktif/Pasif"
@@ -47,7 +53,7 @@
   "option_chatBox_messageBox": {
     "message": "Sohbet kutusu mesjları"
   },
-  "option_save": {
-    "message": "Ayarları kaydet"
+  "option_fullScreen": {
+    "message": "Tam Ekran"
   }
 }

@@ -1,0 +1,12 @@
+/*
+    Recent Last Message Sender
+*/
+#pane-side > div:first-of-type > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:first-of-type > span > span:first-of-type {
+    filter: blur(recentMessageSenderBlurPx); grayscale(1);
+    -webkit-filter: blur(recentMessageSenderBlurPx); grayscale(1);
+}
+
+#pane-side > div:first-of-type > div > div > div:hover * {
+    filter: unset !important; grayscale(0);
+    -webkit-filter: unset !important; grayscale(0);
+}

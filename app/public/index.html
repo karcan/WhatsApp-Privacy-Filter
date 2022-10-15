@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="/app/public/css/index.css">
+
 </head>
 <body>
 
@@ -19,78 +20,95 @@
     <div class="options">
         <b class="name">__MSG_option_name__</b>
         <div class="line">
-            <label class="label" for="enableDisableShortcut">__MSG_option_enableDisableShortcut__</label>
-            <input type="text" id="enableDisableShortcut" />
+            <label class="label" for="keyPress">__MSG_option_keyPress__</label>
+            <input type="text" id="keyPress"/>
+            <button id="keyPressAssign">__MSG_option_keyPressAssign__</button>
         </div>
 
         <div class="line">
             <label class="label" for="recentMessageHeader">__MSG_option_recentMessage_header__</label>
             <label class="switch">
                 <input type="checkbox" id="recentMessageHeader">
-                <span class="slider"></span>
+                <span class="slider round"></span>
             </label>
+            <input type="range" value="0" min="0" max="15" class="range" id="recentMessageHeaderBlurPx">
         </div>
 
         <div class="line">
             <label class="label" for="recentMessageAvatar">__MSG_option_recentMessage_avatar__</label>
             <label class="switch">
                 <input type="checkbox" id="recentMessageAvatar">
-                <span class="slider"></span>
+                <span class="slider round"></span>
             </label>
+            <input type="range" value="0" min="0" max="15" class="range" id="recentMessageAvatarBlurPx">
         </div>
 
         <div class="line">
             <label class="label" for="recentMessageTime">__MSG_option_recentMessage_time__</label>
             <label class="switch">
                 <input type="checkbox" id="recentMessageTime">
-                <span class="slider"></span>
+                <span class="slider round"></span>
             </label>
+            <input type="range" value="0" min="0" max="15" class="range" id="recentMessageTimeBlurPx">
         </div>
 
         <div class="line">
             <label class="label" for="recentMessageSender">__MSG_option_recentMessage_sender__</label>
             <label class="switch">
                 <input type="checkbox" id="recentMessageSender">
-                <span class="slider"></span>
+                <span class="slider round"></span>
             </label>
+            <input type="range" value="0" min="0" max="15" class="range" id="recentMessageSenderBlurPx">
         </div>
 
         <div class="line">
             <label class="label" for="recentMessageContent">__MSG_option_recentMessage_content__</label>
             <label class="switch">
                 <input type="checkbox" id="recentMessageContent">
-                <span class="slider"></span>
+                <span class="slider round"></span>
             </label>
+            <input type="range" value="0" min="0" max="15" class="range" id="recentMessageContentBlurPx">
         </div>
 
         <div class="line">
             <label class="label" for="recentMessageTick">__MSG_option_recentMessage_tick__</label>
             <label class="switch">
                 <input type="checkbox" id="recentMessageTick">
-                <span class="slider"></span>
+                <span class="slider round"></span>
             </label>
+            <input type="range" value="0" min="0" max="15" class="range" id="recentMessageTickBlurPx">
         </div>
 
         <div class="line">
             <label class="label" for="chatBoxTitle">__MSG_option_chatBox_title__</label>
             <label class="switch">
                 <input type="checkbox" id="chatBoxTitle">
-                <span class="slider"></span>
+                <span class="slider round"></span>
             </label>
+            <input type="range" value="0" min="0" max="15" class="range" id="chatBoxTitleBlurPx">
         </div>
 
         <div class="line">
             <label class="label" for="chatBoxMessageBox">__MSG_option_chatBox_messageBox__</label>
             <label class="switch">
                 <input type="checkbox" id="chatBoxMessageBox">
-                <span class="slider"></span>
+                <span class="slider round"></span>
+            </label>
+            <input type="range" value="0" min="0" max="15" class="range" id="chatBoxMessageBoxBlurPx">
+        </div>
+
+        <div class="line">
+            <label class="label" for="fullScreen">__MSG_option_fullScreen__</label>
+            <label class="switch">
+                <input type="checkbox" id="fullScreen">
+                <span class="slider round"></span>
             </label>
         </div>
     </div>
 
     <div class="bottom">
-        <button id="save">__MSG_option_save__</button>
         <button id="donate">__MSG_app_donate__</button>
+        <button id="popout">__MSG_app_popout__</button>
     </div>
 
 

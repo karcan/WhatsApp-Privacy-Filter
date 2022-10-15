@@ -8,6 +8,9 @@
   "app_donate": {
     "message": "Donate"
   },
+  "app_popout": {
+    "message": "Pop out"
+  },
   "welcome_description": {
     "message": "Extension configuration will be added with next version"
   },
@@ -17,8 +20,11 @@
   "option_name": {
     "message": "Settings"
   },
-  "option_enableDisableShortcut": {
+  "option_keyPress": {
     "message": "Shortcut for enable/disable"
+  },
+  "option_keyPressAssign": {
+    "message": "Assign"
   },
   "option_toggle": {
     "message": "Toggle"
@@ -47,7 +53,7 @@
   "option_chatBox_messageBox": {
     "message": "Chat box message box"
   },
-  "option_save": {
-    "message": "Save settings"
+  "option_fullScreen": {
+    "message": "Full Screen"
   }
 }
