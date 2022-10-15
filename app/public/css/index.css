@@ -119,8 +119,9 @@ input[type=text] {
     .bottom a {
         color:#FFF;
         display:inline-block;
-        padding:0 10px;
+        padding:0 0;
         font-weight:bold;
+        font-size:11px;
     }
 
     .bottom #donate {

@@ -2,6 +2,9 @@
   "app_title": {
     "message": "WhatsApp Privacy Filter"
   },
+  "app_title_short": {
+    "message": "WhatsApp PF"
+  },
   "app_description": {
     "message": "Privacy Filter for WhatsApp Web"
   },
@@ -64,6 +67,12 @@
   },
   "chrome_store": {
     "message": "Chrome Store"
+  },
+  "mozilla_addons": {
+    "message": "Firefox Add-ons"
+  },
+  "edge_addons": {
+    "message": "Edge Add-ons"
   },
   "github": {
     "message": "GitHub"

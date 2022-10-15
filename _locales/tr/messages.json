@@ -2,11 +2,14 @@
   "app_title": {
     "message": "WhatsApp Gizlilik Filtresi"
   },
+  "app_title_short": {
+    "message": "WhatsApp GF"
+  },
   "app_description": {
     "message": "WhatsApp Web için Gizlilik Filtresi"
   },
   "app_donate": {
-    "message": "Bağış Yap"
+    "message": "Bağış"
   },
   "app_popout": {
     "message": "Ekranı ayır"
@@ -64,6 +67,12 @@
   },
   "chrome_store": {
     "message": "Chrome Mağazası"
+  },
+  "mozilla_addons": {
+    "message": "Firefox Mağazası"
+  },
+  "edge_addons": {
+    "message": "Edge Mağazası"
   },
   "github": {
     "message": "GitHub"

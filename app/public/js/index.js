@@ -222,6 +222,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.open("https://github.com/karcan/WhatsApp-Privacy-Filter", '_blank');
             });
 
+            document.getElementById("mozillaAddons").addEventListener('click', function (event) {
+                event.preventDefault();
+                window.open("https://addons.mozilla.org/tr/firefox/addon/whatsapp-privacy-filter/", '_blank');
+            });
+
+            document.getElementById("edgeAddons").addEventListener('click', function (event) {
+                event.preventDefault();
+                window.open("https://microsoftedge.microsoft.com/addons/detail/whatsapp-privacy-filter/nhgbamgbiccfkbcnchkphnfjaabpijgn", '_blank');
+            });
+
             setInterval(() => {
                 if (injectQueue.length > 0) {
                     injectQueue[0]();
