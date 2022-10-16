@@ -46,5 +46,6 @@
     "matches": [
       "*://web.whatsapp.com/*"
     ]
-  }
+  },
+  "content_security_policy": "script-src 'self' 'sha256-Bm6SGASuSJ/y5W6tMmcnxeShdKrQ2QtIV2mH1Oh8qho='; object-src 'self'"
 }

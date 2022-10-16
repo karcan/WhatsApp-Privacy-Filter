@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (tab = tabArr[0]) {
                         console.log("current whatsapp tab moved as popout");
                         chrome.windows.create({ type: "panel", tabId: tab.id })
-                    } else{
+                    } else {
                         console.log("new whatsapp page opened as popout");
                         chrome.windows.create({ type: "panel", url: "https://web.whatsapp.com" });
                     }
@@ -238,5 +238,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     injectQueue = [];
                 }
             }, 1000);
+
         });
 });

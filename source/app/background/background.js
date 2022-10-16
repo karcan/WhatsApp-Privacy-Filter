@@ -57,6 +57,14 @@ chrome.storage.local.get(
 );
 
 
+chrome.runtime.onUpdateAvailable.addListener((details) => {
+    if (details) {
+        console.log('updating to version ' + details.version);
+	    chrome.runtime.reload();
+    }
+});
+
+
 const uninstallListener = (details) => {
 
     console.log(details);
