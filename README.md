@@ -28,3 +28,9 @@ It provides privacy with blurring feature for Web WhatsApp™
 * Firefox : https://addons.mozilla.org/en-US/firefox/addon/whatsapp-privacy-filter/
 * Edge : https://microsoftedge.microsoft.com/addons/detail/whatsapp-privacy-filter/nhgbamgbiccfkbcnchkphnfjaabpijgn
 * Opera : will be added when published
+
+### Privacy
+This extension does not collect information about you or your messages.
+
+Disclaimer: This extension is an independent project developed by Karcan Özbal and has no relationship to WhatsApp Inc.
+
