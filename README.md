@@ -26,7 +26,7 @@ It provides privacy with blurring feature for Web WhatsApp™
 
 ### Installation
 * Chrome : https://chrome.google.com/webstore/detail/whatsapp-privacy-filter/ppamjkdhajaohmhhhbccojhgigkmbkeb
-* Firefox : https://addons.mozilla.org/en-US/firefox/addon/whatsapp-privacy-filter/
+* Firefox : https://addons.mozilla.org/firefox/addon/whatsapp-privacy-filter/
 * Edge : https://microsoftedge.microsoft.com/addons/detail/whatsapp-privacy-filter/nhgbamgbiccfkbcnchkphnfjaabpijgn
 * Opera : will be added when published
 
