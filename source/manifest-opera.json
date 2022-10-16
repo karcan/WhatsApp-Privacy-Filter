@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_app_title__",
+  "description": "__MSG_app_description__",
+  "default_locale": "en",
+  "version": "1.4",
+  "background": {
+    "service_worker": "app/background/background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "app/public/logo.png",
+    "48": "app/public/logo.png",
+    "128": "app/public/logo.png"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_icon": "app/public/logo.png",
+    "default_popup": "app/public/index.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "app/background/contentScripts/content.js",
+        "app/background/contentStyles/blur/chatBoxMessageBox.css",
+        "app/background/contentStyles/blur/chatBoxTitle.css",
+        "app/background/contentStyles/blur/recentMessageAvatar.css",
+        "app/background/contentStyles/blur/recentMessageContent.css",
+        "app/background/contentStyles/blur/recentMessageHeader.css",
+        "app/background/contentStyles/blur/recentMessageSender.css",
+        "app/background/contentStyles/blur/recentMessageTick.css",
+        "app/background/contentStyles/blur/recentMessageTime.css",
+        "app/background/contentStyles/screen/fullScreen.css"
+      ],
+      "matches": [ "*://web.whatsapp.com/*" ]
+    }
+  ],
+  "externally_connectable": {
+    "matches": [
+      "*://web.whatsapp.com/*"
+    ]
+  }
+}

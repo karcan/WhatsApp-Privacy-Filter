@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.getElementById("mozillaAddons").addEventListener('click', function (event) {
                 event.preventDefault();
-                window.open("https://addons.mozilla.org/tr/firefox/addon/whatsapp-privacy-filter/", '_blank');
+                window.open("https://addons.mozilla.org/firefox/addon/whatsapp-privacy-filter/", '_blank');
             });
 
             document.getElementById("edgeAddons").addEventListener('click', function (event) {
