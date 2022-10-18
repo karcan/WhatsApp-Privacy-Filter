@@ -1,7 +1,7 @@
-<a href="https://www.patreon.com/karcan"><img src="https://img.shields.io/badge/PATREON-D14836?style=for-the-badge&logo=patreon&logoColor=white&color=orange"></a>
-[![License](https://img.shields.io/github/license/karcan/whatsapp-privacy-filter?style=for-the-badge)](https://github.com/karcan/WhatsApp-Privacy-Filter/blob/master/LICENSE)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/users/ppamjkdhajaohmhhhbccojhgigkmbkeb?color=green&label=chrome%20users&logoColor=white&style=for-the-badge)](https://chrome.google.com/webstore/detail/whatsapp-privacy-filter/ppamjkdhajaohmhhhbccojhgigkmbkeb)
-[![Mozilla Add-on](https://img.shields.io/amo/users/%7B8d4d41ca-5d76-4ac2-81e5-ec91acb95e4a%7D?color=green&label=Mozilla&style=for-the-badge)](https://addons.mozilla.org/firefox/addon/whatsapp-privacy-filter/)
+<a href="https://www.patreon.com/karcan"><img src="https://img.shields.io/badge/PATREON-D14836?style=flat-square&logo=patreon&logoColor=white&color=orange"></a>
+[![License](https://img.shields.io/github/license/karcan/whatsapp-privacy-filter?style=flat-square)](https://github.com/karcan/WhatsApp-Privacy-Filter/blob/master/LICENSE)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/users/ppamjkdhajaohmhhhbccojhgigkmbkeb?color=green&label=chrome%20users&logoColor=white&style=flat-square)](https://chrome.google.com/webstore/detail/whatsapp-privacy-filter/ppamjkdhajaohmhhhbccojhgigkmbkeb)
+[![Mozilla Add-on](https://img.shields.io/amo/users/%7B8d4d41ca-5d76-4ac2-81e5-ec91acb95e4a%7D?color=green&label=Mozilla&style=flat-square)](https://addons.mozilla.org/firefox/addon/whatsapp-privacy-filter/)
 
 
 # <img src="/source/app/public/logo.png" width="28">  WhatsApp Privacy Filter
