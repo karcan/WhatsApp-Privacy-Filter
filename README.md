@@ -2,6 +2,7 @@
 [![License](https://img.shields.io/github/license/karcan/whatsapp-privacy-filter?style=flat-square)](https://github.com/karcan/WhatsApp-Privacy-Filter/blob/master/LICENSE)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/users/ppamjkdhajaohmhhhbccojhgigkmbkeb?color=green&label=chrome%20users&logoColor=white&style=flat-square)](https://chrome.google.com/webstore/detail/whatsapp-privacy-filter/ppamjkdhajaohmhhhbccojhgigkmbkeb)
 [![Mozilla Add-on](https://img.shields.io/amo/users/%7B8d4d41ca-5d76-4ac2-81e5-ec91acb95e4a%7D?color=green&label=Mozilla&style=flat-square)](https://addons.mozilla.org/firefox/addon/whatsapp-privacy-filter/)
+[![Edge Add-on](https://img.shields.io/badge/dynamic/json?label=Edge&query=%24.activeInstallCount&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fnhgbamgbiccfkbcnchkphnfjaabpijgn)](https://microsoftedge.microsoft.com/addons/detail/whatsapp-privacy-filter/nhgbamgbiccfkbcnchkphnfjaabpijgn)
 
 
 # <img src="/source/app/public/logo.png" width="28">  WhatsApp Privacy Filter
