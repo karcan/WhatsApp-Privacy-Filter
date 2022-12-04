@@ -1,6 +1,10 @@
 /* Chat Box > Chat Title */
 #main > header > div:first-of-type,
-#main > header > div:nth-of-type(2) {
+#main > header > div:nth-of-type(2)
+
+._2YnE3 /* avatar */
+._2rlF7 /* title */
+{
     filter: blur(chatBoxTitleBlurPx) grayscale(1);
     -webkit-filter: blur(chatBoxTitleBlurPx) grayscale(1);
 }

@@ -27,6 +27,22 @@ input[type=text] {
     box-sizing: border-box; /* Opera/IE 8+ */
 }
 
+    .logo #donate {
+        position: absolute;
+        border-radius: 20px;
+        background-color: #ff3939;
+        border: 1px dashed #d8d8d8;
+        font-weight: bold;
+        left: 15px;
+        width: 100px;
+        height: 30px;
+        color: #fff;
+    }
+
+        .logo #donate:hover {
+            background-color: #ff6363;
+        }
+
     .logo #popout {
         position: absolute;
         border-radius: 20px;

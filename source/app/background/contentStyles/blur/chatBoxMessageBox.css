@@ -1,15 +1,36 @@
 /*
     Chat Box > Message Box
 */
+
+
+/*
 #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div,
-#main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div {
+#main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div 
+*/
+
+  ._22Msk   /* text */
+, ._3BGWx   /* sticker */
+, ._1FpDI   /* gif */
+, ._1tfap   /* contact */
+, ._1t37P   /* file */
+, ._35n_s   /* voice */
+, ._1t37P   /* video */
+, ._3nbHh   /* image */
+{
     filter: blur(chatBoxMessageBoxBlurPx) grayscale(1);
     -webkit-filter: blur(chatBoxMessageBoxBlurPx) grayscale(1);
-
 }
 
-    #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div:hover,
-    #main > div:nth-of-type(3) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div:hover {
-        filter: unset !important;
-        -webkit-filter: unset !important;
-    }
+  ._3mSPV:hover *
+, ._22Msk:hover /* text */
+, ._3BGWx:hover /* sticker */
+, ._1FpDI:hover /* gif */
+, ._1tfap:hover /* contact */
+, ._1t37P:hover /* file */
+, ._35n_s:hover /* voice */
+, ._1t37P:hover /* video */
+, ._3nbHh:hover /* image */ 
+{
+    filter: unset !important;
+    -webkit-filter: unset !important;
+}

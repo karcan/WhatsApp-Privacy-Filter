@@ -15,7 +15,7 @@
     "message": "Pop out"
   },
   "welcome_description": {
-    "message": "Welcome to v1.3"
+    "message": "Welcome to v1.6"
   },
   "popup_description": {
     "message": "Remember to pin extension on your browser for user options"
@@ -73,6 +73,9 @@
   },
   "edge_addons": {
     "message": "Edge Add-ons"
+  },
+  "opera_addons": {
+    "message": "Opera Addons"
   },
   "github": {
     "message": "GitHub"

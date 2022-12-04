@@ -170,10 +170,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.value = option.keyPress.join(" + ");
             });
 
-            document.getElementById("donate").addEventListener('click', function (event) {
-                event.preventDefault();
-                window.open("https://www.patreon.com/karcan", '_blank');
+            document.querySelectorAll("#donate").forEach(donate => {
+                donate.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    window.open("https://www.patreon.com/karcan", '_blank');
 
+                })
             });
 
             document.getElementById("popout").addEventListener('click', function (event) {
@@ -217,10 +219,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.open("https://chrome.google.com/webstore/detail/whatsapp-privacy-filter/ppamjkdhajaohmhhhbccojhgigkmbkeb", '_blank');
             });
 
-            document.getElementById("github").addEventListener('click', function (event) {
-                event.preventDefault();
-                window.open("https://github.com/karcan/WhatsApp-Privacy-Filter", '_blank');
-            });
 
             document.getElementById("mozillaAddons").addEventListener('click', function (event) {
                 event.preventDefault();
@@ -230,6 +228,11 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("edgeAddons").addEventListener('click', function (event) {
                 event.preventDefault();
                 window.open("https://microsoftedge.microsoft.com/addons/detail/whatsapp-privacy-filter/nhgbamgbiccfkbcnchkphnfjaabpijgn", '_blank');
+            });
+
+            document.getElementById("operaAddons").addEventListener('click', function (event) {
+                event.preventDefault();
+                window.open("https://addons.opera.com/en/extensions/details/whatsapp-privacy-filter/", '_blank');
             });
 
             setInterval(() => {

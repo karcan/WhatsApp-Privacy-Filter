@@ -3,7 +3,7 @@
   "name": "__MSG_app_title__",
   "description": "__MSG_app_description__",
   "default_locale": "en",
-  "version": "1.4",
+  "version": "1.6",
   "background": {
     "service_worker": "app/background/background.js",
     "type": "module"
@@ -46,6 +46,5 @@
     "matches": [
       "*://web.whatsapp.com/*"
     ]
-  },
-  "content_security_policy": "script-src 'self' 'sha256-Bm6SGASuSJ/y5W6tMmcnxeShdKrQ2QtIV2mH1Oh8qho='; object-src 'self'"
+  }
 }
